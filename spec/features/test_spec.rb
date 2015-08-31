@@ -22,7 +22,7 @@ describe 'the-internet-heroku' do
 
     it 'javascript alerts' do
             @driver.find_element(:link_text, 'JavaScript Alerts').click
-            @driver.find_element(:css, 'button[onClick="jsAlert()"]').click           # can also use --- @driver.execute_script("jsAlert()") --- but decided to use other to test actual click of button
+            @driver.find_element(:css, 'button[onClick="jsAlert()"]').click
             @driver.switch_to.alert.accept
             expect(@driver.find_element(:xpath,"//*[contains(.,'You successfuly clicked an alert')]")).to be_truthy
     end
